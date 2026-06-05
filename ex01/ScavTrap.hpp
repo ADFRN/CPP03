@@ -6,7 +6,7 @@
 /*   By: afournie <afournie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 15:44:05 by afournie          #+#    #+#             */
-/*   Updated: 2026/06/05 16:11:47 by afournie         ###   ########.fr       */
+/*   Updated: 2026/06/05 16:44:12 by afournie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,10 @@
 
 class ScavTrap : public ClapTrap
 {
-	private:
-
 	public:
 		ScavTrap(std::string name);
 		~ScavTrap();
+		void attack(const std::string& target) override;
 		void guardGate();
 };
 

@@ -6,7 +6,7 @@
 /*   By: afournie <afournie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 15:09:15 by afournie          #+#    #+#             */
-/*   Updated: 2026/06/05 16:16:08 by afournie         ###   ########.fr       */
+/*   Updated: 2026/06/05 16:22:44 by afournie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ ClapTrap::ClapTrap(std::string name, int hit_pts, int energy_pts, int attack_dmg
 	this->hit_pts = hit_pts;
 	this->energy_pts = energy_pts;
 	this->attack_dmg = attack_dmg;
-	std::cout << this->name << " created" << std::endl;
 	return ;
 }
 
