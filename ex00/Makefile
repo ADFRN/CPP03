@@ -6,22 +6,24 @@
 #    By: afournie <afournie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/05 15:08:41 by afournie          #+#    #+#              #
-#    Updated: 2026/06/05 15:09:05 by afournie         ###   ########.fr        #
+#    Updated: 2026/06/18 15:17:36 by afournie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC			= main.cpp ClapTrap.cpp
+INC			= ClapTrap.hpp
 OBJ			= $(SRC:.cpp=.o)
 
-CC			= c++ -Wall -Wextra -Werror -std=c++98
+CXX			= c++
+CXXFLAGS	= -std=c++98 -Wall -Wextra -Werror
 RM			= rm -rf
 
-NAME		= ClapTrap
+NAME		= ex00
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	$(CC) $(OBJ) -o $(NAME)
+$(NAME): $(OBJ) $(INC)
+	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 clean:
 	$(RM) $(OBJ)

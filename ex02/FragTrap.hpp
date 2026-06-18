@@ -6,7 +6,7 @@
 /*   By: afournie <afournie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 16:19:29 by afournie          #+#    #+#             */
-/*   Updated: 2026/06/05 16:45:04 by afournie         ###   ########.fr       */
+/*   Updated: 2026/06/18 15:20:16 by afournie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class FragTrap : public ClapTrap
 		FragTrap(std::string name);
 		~FragTrap();
 		void highFivesGuys( void );
-		void attack(const std::string& target) override;
+		void attack(const std::string& target);
 };
 
 #endif
