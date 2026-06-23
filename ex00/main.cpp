@@ -6,7 +6,7 @@
 /*   By: afournie <afournie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 15:09:08 by afournie          #+#    #+#             */
-/*   Updated: 2026/06/05 15:40:56 by afournie         ###   ########.fr       */
+/*   Updated: 2026/06/23 15:43:50 by afournie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,21 @@
 
 int	main( void )
 {
-	ClapTrap test("test");
+	ClapTrap test("Cayde");
 
+	test.getEP();
+	test.getHP();
+	test.getAD();
 	for (int i = 0; i < 11; i++)
 	{
-		test.attack("quelqu'un");
+		std::cout << std::endl;
+		test.getEP();
+		test.attack("Oryx");
 		test.takeDamage(8);
+		test.getHP();
+		std::cout << std::endl;
 		test.beRepaired(12);
+		test.getHP();
 	}
 
 	return 0;

@@ -6,7 +6,7 @@
 /*   By: afournie <afournie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 15:09:15 by afournie          #+#    #+#             */
-/*   Updated: 2026/06/05 16:22:44 by afournie         ###   ########.fr       */
+/*   Updated: 2026/06/23 15:52:17 by afournie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,11 @@ ClapTrap::~ClapTrap()
 
 void ClapTrap::attack(const std::string& target)
 {
+	if (this->hit_pts <= 0)
+	{
+		std::cout << this->name << " can't attack, he's dead" << std::endl;
+		return;
+	}
 	if (this->energy_pts < 1)
 	{
 		std::cout << this->name << " can't attack, no more energy left" << std::endl;
@@ -56,6 +61,11 @@ void ClapTrap::attack(const std::string& target)
 }
 void ClapTrap::takeDamage(unsigned int amount)
 {
+	if (this->hit_pts <= 0)
+	{
+		std::cout << this->name << " already dead" << std::endl;
+		return;
+	}
 	this->hit_pts -= amount;
 	std::cout << this->name << " has taken " << amount << " damage" << std::endl;
 	return ;
@@ -63,6 +73,11 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
+	if (this->hit_pts <= 0)
+	{
+		std::cout << this->name << " can't be repaired, he's dead" << std::endl;
+		return;
+	}
 	if (this->energy_pts < 1)
 	{
 		std::cout << this->name << " can't be repaired, no more energy left" << std::endl;
@@ -72,4 +87,19 @@ void ClapTrap::beRepaired(unsigned int amount)
 	this->energy_pts -= 1;
 	std::cout << this->name << " just repaired " << amount << " health" << std::endl;
 	return ;
+}
+
+void ClapTrap::getHP() const
+{
+	std::cout << this->name << " have " << this->hit_pts << " hp" << std::endl;
+}
+
+void ClapTrap::getEP() const
+{
+	std::cout << this->name << " have " << this->energy_pts << " energy" << std::endl;
+}
+
+void ClapTrap::getAD() const
+{
+	std::cout << this->name << " have " << this->attack_dmg << " attack dmg" << std::endl;
 }

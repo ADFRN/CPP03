@@ -6,7 +6,7 @@
 /*   By: afournie <afournie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 15:09:11 by afournie          #+#    #+#             */
-/*   Updated: 2026/06/05 16:44:01 by afournie         ###   ########.fr       */
+/*   Updated: 2026/06/23 15:45:34 by afournie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,10 @@ class ClapTrap
 		virtual void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amout);
+
+		void getHP() const;
+		void getEP() const;
+		void getAD() const;
 };
 
 #endif

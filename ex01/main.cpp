@@ -6,7 +6,7 @@
 /*   By: afournie <afournie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 15:09:08 by afournie          #+#    #+#             */
-/*   Updated: 2026/06/05 16:17:26 by afournie         ###   ########.fr       */
+/*   Updated: 2026/06/23 15:50:44 by afournie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,45 @@ int	main(void)
 {
 	std::cout << "=== Creating ClapTrap ===" << std::endl;
 	ClapTrap a("CL4P-TP");
-	std::cout << "\n=== Creating ScavTrap ===" << std::endl;
+	a.getAD();
+	a.getEP();
+	a.getHP();
+	std::cout << std::endl;
+
+	std::cout << "=== Creating ScavTrap ===" << std::endl;
 	ScavTrap b("SC4V-TP");
-	std::cout << "\n=== Testing ClapTrap actions ===" << std::endl;
+	b.getAD();
+	b.getEP();
+	b.getHP();
+	std::cout << std::endl;
+
+	std::cout << "=== Testing ClapTrap actions ===" << std::endl;
 	a.attack("target dummy");
 	a.takeDamage(5);
+	a.getHP();
 	a.beRepaired(3);
-	std::cout << "\n=== Testing ScavTrap actions ===" << std::endl;
+	a.getHP();
+	a.getEP();
+	std::cout << std::endl;
+
+	std::cout << "=== Testing ScavTrap actions ===" << std::endl;
 	b.attack("bandit");
 	b.takeDamage(30);
+	b.getHP();
 	b.beRepaired(20);
-	std::cout << "\n=== Special ability ===" << std::endl;
+	b.getHP();
+	b.getEP();
+	std::cout << std::endl;
+
+	std::cout << "=== Special ability ===" << std::endl;
 	b.guardGate();
-	std::cout << "\n=== Energy depletion test ===" << std::endl;
+	std::cout << std::endl;
+
+	std::cout << "=== Energy depletion test ===" << std::endl;
 	for (int i = 0; i < 55; i++)
+	{
 		b.attack("endless target");
-	std::cout << "\n=== End of main ===" << std::endl;
+		b.getEP();
+	}
 	return (0);
 }
