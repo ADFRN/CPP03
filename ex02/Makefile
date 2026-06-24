@@ -6,7 +6,7 @@
 #    By: afournie <afournie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/05 15:08:41 by afournie          #+#    #+#              #
-#    Updated: 2026/06/18 15:19:10 by afournie         ###   ########.fr        #
+#    Updated: 2026/06/24 11:01:49 by afournie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ INC			=	ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
 OBJ			= $(SRC:.cpp=.o)
 
 CXX			= c++
-CXXFLAGS	= -std=c++98 -Wall -Wextra -Werror
+CXXFLAGS	= -std=c++98 -Wall -Wextra -Werror -Wshadow
 RM			= rm -rf
 
 NAME		= ex02

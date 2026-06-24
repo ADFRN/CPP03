@@ -6,7 +6,7 @@
 /*   By: afournie <afournie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 16:19:54 by afournie          #+#    #+#             */
-/*   Updated: 2026/06/05 16:45:42 by afournie         ###   ########.fr       */
+/*   Updated: 2026/06/24 11:02:45 by afournie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,30 +15,25 @@
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name, 100, 100, 30)
 {
-	std::cout << name << " FragTrap created" << std::endl;
+	std::cout << "FragTrap created" << std::endl;
 	return ;
+}
+
+FragTrap::FragTrap(const FragTrap& other) : ClapTrap(other)
+{
+	*this = other;
+}
+
+FragTrap& FragTrap::operator=(const FragTrap& other)
+{
+	if (this != &other)
+		ClapTrap::operator=(other);
+	return (*this);
 }
 
 FragTrap::~FragTrap()
 {
-	return ;
-}
-
-void FragTrap::attack(const std::string& target)
-{
-	if (this->energy_pts < 1)
-	{
-		std::cout << this->name << " can't attack, no more energy left" << std::endl;
-		return ;
-	}
-	std::cout << "FragTrap ";
-	std::cout << this->name;
-	std::cout << " attacks ";
-	std::cout << target;
-	std::cout << " causing ";
-	std::cout << this->attack_dmg;
-	std::cout << " points of damage!" << std::endl;
-	this->energy_pts -= 1;
+	std::cout << "FragTrap destroyed" << std::endl;
 	return ;
 }
 

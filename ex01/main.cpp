@@ -6,12 +6,21 @@
 /*   By: afournie <afournie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 15:09:08 by afournie          #+#    #+#             */
-/*   Updated: 2026/06/23 15:50:44 by afournie         ###   ########.fr       */
+/*   Updated: 2026/06/24 10:44:22 by afournie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+
+// int main(void)
+// {
+// 	ClapTrap *bot = new ScavTrap("Test");
+
+// 	delete bot;
+
+// 	return 0;
+// }
 
 int	main(void)
 {
@@ -48,6 +57,7 @@ int	main(void)
 	std::cout << std::endl;
 
 	std::cout << "=== Special ability ===" << std::endl;
+	b.guardGate();
 	b.guardGate();
 	std::cout << std::endl;
 
